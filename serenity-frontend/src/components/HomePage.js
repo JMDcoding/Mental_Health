@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
 
 const features = [
@@ -19,7 +19,19 @@ const features = [
   { title: "Mode Urgence Invisible", description: "Faux écran, code secret, SOS caché" },
 ];
 
-const HomePage = ({ onLogout }) => {
+const HomePage = ({ onLogout, onNavigateToAccount }) => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const slides = ['Vidéos', 'Vocaux', 'Écrits'];
+
+  const handlePrevSlide = () => {
+    setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const handleNextSlide = () => {
+    setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+
   return (
     <div className="homepage-container">
       <header className="homepage-header">
@@ -52,11 +64,28 @@ const HomePage = ({ onLogout }) => {
             </div>
           </main>
           <div className="portrait-zone">
-            <p>Nouvelle zone portrait</p>
+            <div className="carousel">
+              <button onClick={handlePrevSlide} className="carousel-arrow prev">&#10094;</button>
+              <div className="carousel-content">
+                <h3>{slides[activeSlide]}</h3>
+                {/* Le contenu ici pourrait être remplacé par des composants spécifiques */}
+                <p>Contenu pour le flux {slides[activeSlide].toLowerCase()}.</p>
+              </div>
+              <button onClick={handleNextSlide} className="carousel-arrow next">&#10095;</button>
+              <div className="carousel-dots">
+                {slides.map((_, index) => (
+                  <span
+                    key={index}
+                    className={`dot ${index === activeSlide ? 'active' : ''}`}
+                    onClick={() => setActiveSlide(index)}
+                  ></span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <aside className="sidebar-specialists">
-          <button className="profile-section-btn" onClick={() => alert("Redirection vers l'espace compte...")}>
+          <button className="profile-section-btn" onClick={onNavigateToAccount}>
             <div className="profile-circle">
               {/* Les initiales pourraient être dynamiques à l'avenir */}
               <span>JM</span> 
