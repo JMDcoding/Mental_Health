@@ -39,18 +39,30 @@ const HomePage = ({ onLogout }) => {
             ))}
           </ul>
         </nav>
-        <main className="central-panel">
-          <h2>Que souhaitez-vous faire ?</h2>
-          <div className="button-grid">
-            <button className="panel-btn">Jeux</button>
-            <button className="panel-btn">Recherche</button>
-            <button className="panel-btn">ASMR</button>
-            <button className="panel-btn">Forum</button>
-            <button className="panel-btn">Vocaux pour vous</button>
-            <button className="panel-btn">Activités</button>
+        <div className="main-content-area">
+          <main className="central-panel">
+            <h2>Que souhaitez-vous faire ?</h2>
+            <div className="button-grid">
+              <button className="panel-btn">Jeux</button>
+              <button className="panel-btn">Recherche</button>
+              <button className="panel-btn">ASMR</button>
+              <button className="panel-btn">Forum</button>
+              <button className="panel-btn">Vocaux pour vous</button>
+              <button className="panel-btn">Activités</button>
+            </div>
+          </main>
+          <div className="portrait-zone">
+            <p>Nouvelle zone portrait</p>
           </div>
-        </main>
+        </div>
         <aside className="sidebar-specialists">
+          <button className="profile-section-btn" onClick={() => alert("Redirection vers l'espace compte...")}>
+            <div className="profile-circle">
+              {/* Les initiales pourraient être dynamiques à l'avenir */}
+              <span>JM</span> 
+            </div>
+            <strong>Mon Espace Compte</strong>
+          </button>
           <h3>Trouver un spécialiste</h3>
           <div className="search-specialist">
             <input type="text" placeholder="Spécialité, nom, lieu..." />
