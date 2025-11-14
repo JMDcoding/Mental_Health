@@ -1,0 +1,183 @@
+.homepage-container {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+}
+
+.homepage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.homepage-header h1 {
+  margin: 0;
+}
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: white;
+  color: #007bff;
+}
+
+.homepage-body {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+.central-panel {
+  flex: 1.5; /* Le panneau central prend la place principale */
+  margin: 0;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 400px;
+}
+
+.central-panel h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.panel-btn {
+  padding: 1.5rem 1rem;
+  font-size: 1.1rem;
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.panel-btn:hover {
+  background-color: #ced4da;
+  transform: translateY(-2px);
+}
+
+.sidebar-specialists {
+  flex: 1; /* La barre latérale droite prend moins de place */
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-specialists h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.search-specialist {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.search-specialist input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+
+.search-specialist button {
+  padding: 0.75rem 1rem;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.2s;
+}
+
+.search-specialist button:hover {
+  background-color: #0056b3;
+}
+
+.map-placeholder {
+  height: 300px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #6c757d;
+  border: 1px dashed #ccc;
+}
+
+.main-nav {
+  flex: 1; /* La barre de navigation de gauche */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  max-width: 350px;
+  align-self: stretch; /* S'étire sur toute la hauteur */
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav li {
+  margin-bottom: 0.75rem;
+}
+
+.nav-btn {
+  width: 100%;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+
+.nav-btn strong {
+  font-size: 1rem;
+  color: #343a40;
+  margin-bottom: 0.25rem;
+}
+
+.nav-btn span {
+  font-size: 0.8rem;
+  color: #6c757d;
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SignupForm.css';
 import './LoginForm.css'; // On importe les styles communs
 
-const SignupForm = ({ onNavigateToLogin }) => {
+const SignupForm = ({ onNavigateToLogin, onSignupSuccess }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -29,7 +29,8 @@ const SignupForm = ({ onNavigateToLogin }) => {
     // Ici, vous ajouteriez la logique pour envoyer les données à votre API
     console.log('Données du nouveau compte :', formData);
     alert('Compte créé avec succès ! Vous pouvez maintenant vous connecter.');
-    onNavigateToLogin(); // Redirige vers la page de connexion
+    // Simule une création de compte et connexion réussies.
+    onSignupSuccess();
   };
 
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './LoginForm.css';
 
-const LoginForm = ({ onNavigateToSignup }) => {
+const LoginForm = ({ onNavigateToSignup, onLoginSuccess }) => {
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -27,9 +27,10 @@ const LoginForm = ({ onNavigateToSignup }) => {
       localStorage.removeItem('rememberedIdentifier');
     }
 
-    alert(`Connexion demandée pour : ${identifier}`);
-    // On ne réinitialise que le mot de passe pour une meilleure expérience
-    setPassword('');
+    // Simule une connexion réussie.
+    // Dans une vraie application, ceci serait appelé après une réponse positive de l'API.
+    alert(`Connexion réussie pour : ${identifier}`);
+    onLoginSuccess();
   };
 
   return (
