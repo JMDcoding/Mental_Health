@@ -55,3 +55,38 @@
 .submit-btn:hover {
   background-color: #0056b3;
 }
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.form-options label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #555;
+}
+
+.form-options input {
+  margin-right: 0.5rem;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
