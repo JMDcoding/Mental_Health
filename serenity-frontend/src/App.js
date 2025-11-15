@@ -5,16 +5,18 @@ import SignupForm from './components/SignupForm';
 import HomePage from './components/HomePage';
 import Footer from './components/Footer';
 import AccountPage from './components/AccountPage';
+import SelfAssessmentPage from './components/SelfAssessmentPage';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authView, setAuthView] = useState('login'); // 'login', 'signup'
-  const [mainView, setMainView] = useState('home'); // 'home', 'account'
+  const [mainView, setMainView] = useState('home'); // 'home', 'account', 'assessment'
 
   const navigateToSignup = () => setAuthView('signup');
   const navigateToLogin = () => setAuthView('login');
   const navigateToHome = () => setMainView('home');
   const navigateToAccount = () => setMainView('account');
+  const navigateToAssessment = () => setMainView('assessment');
 
   const handleLoginSuccess = () => {
     setIsAuthenticated(true);
@@ -30,11 +32,11 @@ function App() {
     <div className="App">
       <div className="main-content">
         {isAuthenticated ? (
-          mainView === 'home' ? (
-            <HomePage onLogout={handleLogout} onNavigateToAccount={navigateToAccount} />
-          ) : (
-            <AccountPage onLogout={handleLogout} onNavigateToHome={navigateToHome} />
-          )
+          {
+            home: <HomePage onLogout={handleLogout} onNavigateToAccount={navigateToAccount} onNavigateToAssessment={navigateToAssessment} />,
+            account: <AccountPage onLogout={handleLogout} onNavigateToHome={navigateToHome} />,
+            assessment: <SelfAssessmentPage onNavigateToHome={navigateToHome} />
+          }[mainView]
         ) : (
           authView === 'login' ? (
             <LoginForm onNavigateToSignup={navigateToSignup} onLoginSuccess={handleLoginSuccess} />

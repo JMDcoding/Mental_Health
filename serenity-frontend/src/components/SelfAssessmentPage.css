@@ -1,0 +1,176 @@
+.assessment-page-container {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  min-height: 100%;
+  padding-bottom: 2rem;
+}
+
+.assessment-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.assessment-page-header h1 {
+  margin: 0 0 0 1rem;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn-assessment {
+  flex-shrink: 0; /* Empêche le bouton de se réduire */
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.back-btn-assessment:hover {
+  background-color: white;
+  color: #007bff;
+}
+
+.assessment-page-body {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.assessment-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  flex: 1;
+}
+
+.assessment-category {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.assessment-category h2 {
+  margin-top: 0;
+  color: #0056b3;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.assessment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.test-card-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #343a40;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1; /* Rend le bouton carré */
+}
+
+.test-card-btn:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.assessment-search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 2rem;
+}
+
+.assessment-search-bar input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.assessment-search-bar input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.no-results-message {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.1rem;
+  padding: 3rem;
+}
+
+.assessment-nav {
+  flex: 0 0 220px; /* Largeur fixe pour la navigation */
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+}
+
+.assessment-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 0.5rem;
+}
+
+.assessment-nav li {
+  margin: 0;
+}
+
+.assessment-nav button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #343a40;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.assessment-nav button:hover {
+  background-color: #f1f3f5;
+}
+
+.lock-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 1rem;
+  opacity: 0.6;
+}

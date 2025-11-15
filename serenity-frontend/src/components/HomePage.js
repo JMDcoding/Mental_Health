@@ -19,7 +19,7 @@ const features = [
   { title: "Mode Urgence Invisible", description: "Faux écran, code secret, SOS caché" },
 ];
 
-const HomePage = ({ onLogout, onNavigateToAccount }) => {
+const HomePage = ({ onLogout, onNavigateToAccount, onNavigateToAssessment }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const slides = ['Vidéos', 'Vocaux', 'Écrits'];
 
@@ -41,9 +41,12 @@ const HomePage = ({ onLogout, onNavigateToAccount }) => {
       <div className="homepage-body">
         <nav className="main-nav">
           <ul>
-            {features.map((feature) => (
+            {features.map((feature, index) => (
               <li key={feature.title}>
-                <button className="nav-btn">
+                <button 
+                  className="nav-btn"
+                  onClick={feature.title === "Auto-évaluation" ? onNavigateToAssessment : undefined}
+                >
                   <strong>{feature.title}</strong>
                   <span>{feature.description}</span>
                 </button>
